@@ -24,3 +24,45 @@ const description = `The ${team} team scored ${player1Score + player2Score} poin
 const blogPost = '...and that\'s how I learned how to access the last character in a string!'
 const lastCharacter = blogPost[blogPost.length - 1] // '!'
 
+
+// Strict Equality
+const userPassword = 'iamthecoolest123'
+const guessedPassword = 'iamahacker123'
+
+const isPasswordCorrect = userPassword === guessedPassword // false
+
+// and (Python) === && (JavaScript)
+const userPIN = 1234
+const guessedPIN = 1234
+
+const isPINCorrect = userPIN === guessedPIN // true
+
+const accountBalance = 100
+const requestedWithdrawal = 200
+
+const hasSufficientFunds = accountBalance >= requestedWithdrawal // false
+
+const canMakeWithdrawal = isPINCorrect && hasSufficientFunds // false
+
+
+//The syntax for the OR operator is ||
+const accountBalance = 100
+const requestedWithdrawal = 200
+
+const hasSufficientFunds = accountBalance >= requestedWithdrawal // false
+
+const hasOverdraft = true
+
+const canMakeWithdrawal = hasSufficientFunds || hasOverdraft // true
+
+
+//The logical operator for NOT, ! is often referred to as the bang operator because this punctuation mark is called a 'bang' in American English.
+
+// When used in front of a boolean, the expression will evaluate to the opposite value.
+
+// We can check if two values are not equal with the strict inequality operator, !==:
+
+const accountFunds = 300
+
+const isAccountNotEmpty = accountFunds !== 0 // true
+
