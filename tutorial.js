@@ -1,5 +1,5 @@
 // console.log("five" * "twenty")
-console.log(5*20)
+console.log(5 * 20);
 
 
 // Declaring and initializing a variable:
