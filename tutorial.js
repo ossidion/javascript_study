@@ -66,3 +66,94 @@ const accountFunds = 300
 
 const isAccountNotEmpty = accountFunds !== 0 // true
 
+
+// The truthy values in JavaScript are:
+
+// true itself
+// any string except an empty string - ''
+// any number other than 0 (negative numbers included)
+// objects and arrays
+
+const review = 'The food was nice but the atmosphere was terrible';
+const postsRemaining = 20;
+
+if (review && postsRemaining) {
+    console.log("Thanks for your review! You have 19 posts remaining.");
+};
+
+
+// There are six falsy values in JavaScript.
+
+// false
+// 0
+// an empty string ''
+// NaN
+// undefined
+// null (the absence of data)
+
+
+// Ternary if Statements
+
+// If Statement:
+
+if (buzzerPressed) {
+    response = 'Sorry, your journey ends here'
+  } else {
+    response = 'You are through to the next round'
+  }
+
+  // Refactored into Ternary:
+
+  let response = buzzerPressed ? 'Sorry, your journey ends here' : 'You are through to the next round'
+
+
+//   Switch Statements
+
+//  allow us to execute code based on a set of conditions, known as cases.
+
+// They can be a clearer way of managing the flow of your code than if-else statements when you have several conditions.
+
+let isWeekend;
+
+switch (day) {
+  case 'Monday':
+  case 'Tuesday':
+  case 'Wednesday':
+  case 'Thursday':
+  case 'Friday':
+    isWeekend = false
+    break;
+  case 'Saturday':
+  case 'Sunday':
+    isWeekend = true
+    break;
+  default:
+    console.log(day + ' is not a valid day')
+};
+
+// A switch statement starts with the switch keyword, and a set of parentheses () that wrap an expression.
+
+// These are followed by a code block containing cases - a set of conditions, one of which will match the expression.
+// Each case may contain code to execute, or it may fall through to the next case. If this isn't desired, the break 
+// keyword can be used at the end of each case to stop any more code in the switch statement executing.
+
+// If none of the cases match, then the default case will execute.
+
+let lastName;
+
+switch (firstName) {
+  case 'Justin':
+    lastName = 'Bieber'
+    break;
+  case 'Samuel':
+    lastName = 'Jackson'
+    break;
+  case 'Adele':
+    lastName = null
+    break;
+  default:
+    console.log('Who even are you?')
+}
+
+
+
