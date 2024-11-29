@@ -129,3 +129,54 @@ const rainforest = {
     },
     birds: ['toucan', 'macaw', 'hummingbird']
   }
+
+
+// As JavaScript evaluates expressions as it comes across them, it's possible to chain notation to write code more concisely.
+
+const countryName = rainforest.country.name
+const firstBirdSeen = rainforest.birds[0]
+
+// If we use variables to access a property, we must use bracket notation.
+
+const locationKey1 = 'country'
+const locationKey2 = 'capitalCity'
+
+const city = rainforest[locationKey1][locationKey2]
+
+console.log(city) // "San Jose"
+
+
+// Declaring a For In Loop
+
+// A for...in loop can access each property of an object by referencing its keys.
+
+const tree = {
+    name: "Oak",
+    hasAcorns: true,
+    ageInYears: 530,
+};
+
+for (const key in tree) { 
+    // code to be executed
+};
+
+// The syntax is similar to a for loop, but instead of having a counter variable (i) to work with inside the code block, each key of the object 
+// is exposed. There are no stop or step expressions - the code block will be run as many times as there are properties in the object.
+
+// Within the code block, we can use the key to dynamically access the values in the object. As key is a variable, we need to use square
+// bracket notation.
+
+for (const key in tree) { 
+    const value = tree[key]
+    console.log(`The tree has a key of ${key} holding the value ${value}`)
+    // The tree has a key of name holding the value Oak
+    // The tree has a key of hasAcorns holding the value true
+    // The tree has a key of ageInYears holding the value 530
+};
+
+
+// Objects are not indexed, so we cannot use for loops on them. (So we Use For In Loops.)
+
+
+
+
