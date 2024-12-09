@@ -369,71 +369,95 @@ function oddOrEven(num) {
 // It should return a boolean value of false if not enough people are attending or attendees don't spend enough money on tickets, 
 // and true if enough people are attending and they spend enough money on tickets.
 
-function isPartyViable(guests) {
-    let guestVariable = guests
-    const guestList = []
-    let numberOfGuests = false
-    let totalTicketIncome = 0
-    let ticketValueRequired = false
-    let answer = false
-    for (let i = 0; i < guests.length; i++) {
-        guestList.push(guestVariable[i])
-    }
+// function isPartyViable(guests) {
+//     let guestVariable = guests
+//     const guestList = []
+//     let numberOfGuests = false
+//     let totalTicketIncome = 0
+//     let ticketValueRequired = false
+//     let answer = false
+//     for (let i = 0; i < guests.length; i++) {
+//         guestList.push(guestVariable[i])
+//     }
 
-    if (guestList.length >= 5) {
-        numberOfGuests = true
-        // console.log(guestList)
+//     if (guestList.length >= 5) {
+//         numberOfGuests = true
+//         // console.log(guestList)
 
-    }
+//     }
 
-    for (let i = 0; i < guestList.length; i++) {
-        let guest = guestList[i]
+//     for (let i = 0; i < guestList.length; i++) {
+//         let guest = guestList[i]
         
-        const value = guest.paidForTicket
-        totalTicketIncome += value
+//         const value = guest.paidForTicket
+//         totalTicketIncome += value
         
-    }
+//     }
     
 
 
-    if (totalTicketIncome >= 100) {
-        ticketValueRequired = true
-    }
+//     if (totalTicketIncome >= 100) {
+//         ticketValueRequired = true
+//     }
 
-    if (numberOfGuests && ticketValueRequired){
-        answer = true
-    }
+//     if (numberOfGuests && ticketValueRequired){
+//         answer = true
+//     }
 
-    return console.log(answer)
+//     return console.log(answer)
+// }
+
+// let guests = [
+//     { name: "diya", paidForTicket: 15 },
+//     { name: "amul", paidForTicket: 2 },
+//     { name: "saleh", paidForTicket: 2 },
+//     { name: "philippa", paidForTicket: 30 },
+//   ]
+//   isPartyViable(guests);
+//   // should return false
+  
+// guests = [
+//     { name: "diya", paidForTicket: 15 },
+//     { name: "amul", paidForTicket: 2 },
+//     { name: "saleh", paidForTicket: 2 },
+//     { name: "philippa", paidForTicket: 30 },
+//     { name: "kev", paidForTicket: 6 },
+//     { name: "sarah", paidForTicket: 11 },
+//   ]
+//   isPartyViable(guests);
+//   // should return false
+  
+// guests = [
+//     { name: "diya", paidForTicket: 15 },
+//     { name: "amul", paidForTicket: 20 },
+//     { name: "saleh", paidForTicket: 2 },
+//     { name: "philippa", paidForTicket: 30 },
+//     { name: "kev", paidForTicket: 26 },
+//     { name: "sarah", paidForTicket: 11 },
+//   ]
+//   isPartyViable(guests);
+//   // should return true.
+
+
+
+
+// The orderSupplies function takes two arguments: a supplies object with keys of party
+// supplies and values of the cost of that supply, and the number of guests attending.
+
+// It should return a number showing the total cost of ordering one of each item per guest!
+
+function orderSupplies(supplies, guests) {
+    let counter = 0
+    for (const key in supplies) {
+        const value = supplies[key]
+        counter += value
+    }
+    counter = counter * guests
+    return counter
 }
 
-let guests = [
-    { name: "diya", paidForTicket: 15 },
-    { name: "amul", paidForTicket: 2 },
-    { name: "saleh", paidForTicket: 2 },
-    { name: "philippa", paidForTicket: 30 },
-  ]
-  isPartyViable(guests);
-  // should return false
-  
-guests = [
-    { name: "diya", paidForTicket: 15 },
-    { name: "amul", paidForTicket: 2 },
-    { name: "saleh", paidForTicket: 2 },
-    { name: "philippa", paidForTicket: 30 },
-    { name: "kev", paidForTicket: 6 },
-    { name: "sarah", paidForTicket: 11 },
-  ]
-  isPartyViable(guests);
-  // should return false
-  
-guests = [
-    { name: "diya", paidForTicket: 15 },
-    { name: "amul", paidForTicket: 20 },
-    { name: "saleh", paidForTicket: 2 },
-    { name: "philippa", paidForTicket: 30 },
-    { name: "kev", paidForTicket: 26 },
-    { name: "sarah", paidForTicket: 11 },
-  ]
-  isPartyViable(guests);
-  // should return true
+orderSupplies({ cake: 2, iceCream: 7 }, 2);
+// should return 18
+
+orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20);
+// should return 160

@@ -174,17 +174,28 @@
 // Note: This function does not need to return anything.
 
 
-function transferProduct(shelf, basket, product) {
-    const productToTransfer = shelf[product];
-    basket[product] = productToTransfer;
-    delete shelf[product];
-}
+// function transferProduct(shelf, basket, product) {
+//     const productToTransfer = shelf[product];
+//     basket[product] = productToTransfer;
+//     delete shelf[product];
+// }
 
 
-const shelf = { apple: "Keeps the doctor away", lamp: "Shedding light on the situation" };
-const basket = { shoe: "Just the one" };
+// function transferProduct(shelf, basket, product) {
+//     const productToTransfer = shelf[product]; // dynamic variable (accessed via [] rather than .)
+//     basket[product] = productToTransfer;
+//     console.log(basket)
+//     delete shelf[product]
+// }
 
-transferProduct(shelf, basket, "apple");
+
+
+
+
+// const shelf = { apple: "Keeps the doctor away", lamp: "Shedding light on the situation" };
+// const basket = { shoe: "Just the one" };
+
+// transferProduct(shelf, basket, "apple");
 
 // console.log(shelf) // { lamp: "Shedding light on the situation" }
 // console.log(basket) // { shoe: "Just the one", apple: "Keeps the doctor away" }
@@ -200,30 +211,29 @@ transferProduct(shelf, basket, "apple");
 // Otherwise, change the grade to "fail".
 // The function should return the updated grades object.
 
-// function updateStudentGrades(grades) {
-//     const gradesVariable = grades
-//     let passOrFail = ""
+function updateStudentGrades(grades) {
+    for (const key in grades) {
+        const value = grades[key] // accessing the value held in each key via dynamic variable.
+        if (value >= 70) {
+            grades[key] = "pass"
+        } else {
+            grades[key] = "fail"
+        }
+    }
+    return console.log(grades)
+}
 
-//     if (gradesVariable >= 70) {
-//         text = "pass"
-//     } else {
-//         text = "fail"
-//     }
-//     return console.log(text) 
-// };
+updateStudentGrades({ maths: 85 });
+// should return { maths: "pass" }
 
+updateStudentGrades({ english: 70 });
+// should return { english: "pass" }
 
-// updateStudentGrades({ maths: 85 });
-// // should return { maths: "pass" }
+updateStudentGrades({ science: 60 });
+// should return { science: "fail" }
 
-// updateStudentGrades({ english: 70 });
-// // should return { english: "pass" }
-
-// updateStudentGrades({ science: 60 });
-// // should return { science: "fail" }
-
-// updateStudentGrades({ maths: 85, english: 60 });
-// // should return { maths: "pass", english: "fail" }
+updateStudentGrades({ maths: 85, english: 60 });
+// should return { maths: "pass", english: "fail" }
 
 
 
@@ -234,24 +244,24 @@ transferProduct(shelf, basket, "apple");
 // If the string is of odd length, the function should return a single character. If the string is of even length, 
 // it should return the middle two characters concatenated together.
 
-function returnMiddleCharacter(string) {
-    // Write your code here
-    }
+// function returnMiddleCharacter(string) {
+//     // Write your code here
+//     }
 
-    middleOfTheMiddle("dog");
-    // should return "o"
+//     middleOfTheMiddle("dog");
+//     // should return "o"
     
-    middleOfTheMiddle("dogs");
-    // should return "og"
+//     middleOfTheMiddle("dogs");
+//     // should return "og"
     
-    middleOfTheMiddle("sweet candy")
-    // should return " "
+//     middleOfTheMiddle("sweet candy")
+//     // should return " "
     
-    middleOfTheMiddle("I'll be back");
-    // should return "be"
+//     middleOfTheMiddle("I'll be back");
+//     // should return "be"
     
-    middleOfTheMiddle("The quick brown fox jumps over the lazy dog");
-    // should return "u"
+//     middleOfTheMiddle("The quick brown fox jumps over the lazy dog");
+//     // should return "u"
 
 
 // This function takes a multi-dimensional array as an argument. It should return an array containing the first element of
@@ -260,21 +270,21 @@ function returnMiddleCharacter(string) {
 
 // If the original input array is empty (i.e. no nested arrays within it), then the function should return an empty array.
 
-function getNestedFirstAndLast(array) {
-    // Write your code here
-    }
+// function getNestedFirstAndLast(array) {
+//     // Write your code here
+//     }
 
-getNestedFirstAndLast([[ 16 ], [ 82 ]]);
-// should return [ 16, 82 ]
+// getNestedFirstAndLast([[ 16 ], [ 82 ]]);
+// // should return [ 16, 82 ]
 
-getNestedFirstAndLast([[ 2, 79, 13 ], [ 16, 34, 45 ], [ 21, 9, 98 ]]);
-// should return [ 2, 98 ]
+// getNestedFirstAndLast([[ 2, 79, 13 ], [ 16, 34, 45 ], [ 21, 9, 98 ]]);
+// // should return [ 2, 98 ]
 
-getNestedFirstAndLast([[ 16, 22 ]]);
-// should return [ 16, 22 ]
+// getNestedFirstAndLast([[ 16, 22 ]]);
+// // should return [ 16, 22 ]
 
-getNestedFirstAndLast([]);
-// should return []
+// getNestedFirstAndLast([]);
+// // should return []
 
 
 
@@ -289,48 +299,48 @@ getNestedFirstAndLast([]);
 // If the course is Data Engineering and the graduationYear is 2020 or after, their jobTitle should be "Junior Data Engineer".
 // The function should then return the array of graduates with the new property on each object.
 
-function addJobTitle(graduates) {
-    // Write your code here
-    }
+// function addJobTitle(graduates) {
+//     // Write your code here
+//     }
 
-addJobTitle([{ name: "Jonny JavaScript", course: "Software Development", graduationYear: 2018 }]);
-// should return [
-//   { 
-//     name: "Jonny JavaScript",
-//     course: "Software Development",
-//     graduationYear: 2018,
-//     jobTitle: "Senior Software Developer"
-//   }
-// ]
+// addJobTitle([{ name: "Jonny JavaScript", course: "Software Development", graduationYear: 2018 }]);
+// // should return [
+// //   { 
+// //     name: "Jonny JavaScript",
+// //     course: "Software Development",
+// //     graduationYear: 2018,
+// //     jobTitle: "Senior Software Developer"
+// //   }
+// // ]
 
-addJobTitle([{ name: "Petra Python", course: "Data Engineering", graduationYear: 2022 }]);
-// should return [
- //  { 
-//     name: "Petra Python",
-//     course: "Data Engineering",
-//     graduationYear: 2022,
-//     jobTitle: "Junior Data Engineer"
-//   }
-// ]
+// addJobTitle([{ name: "Petra Python", course: "Data Engineering", graduationYear: 2022 }]);
+// // should return [
+//  //  { 
+// //     name: "Petra Python",
+// //     course: "Data Engineering",
+// //     graduationYear: 2022,
+// //     jobTitle: "Junior Data Engineer"
+// //   }
+// // ]
 
-addJobTitle([
-  { name: "Jonny JavaScript", course: "Software Development", graduationYear: 2020 },
-  { name: "Petra Python", course: "Data Engineering", graduationYear: 2019 }
-  ]);
-// should return [
-//    { 
-//      name: "Jonny JavaScript", 
-//      course: "Software Development",
-//      graduationYear: 2020,
-//      jobTitle: "Junior Software Developer"
-//    },
-//    { 
-//      name: "Petra Python",
-//      course: "Data Engineering",
-//      graduationYear: 2019,
-//      jobTitle: "Senior Data Engineer"
-//    }
-// ]
+// addJobTitle([
+//   { name: "Jonny JavaScript", course: "Software Development", graduationYear: 2020 },
+//   { name: "Petra Python", course: "Data Engineering", graduationYear: 2019 }
+//   ]);
+// // should return [
+// //    { 
+// //      name: "Jonny JavaScript", 
+// //      course: "Software Development",
+// //      graduationYear: 2020,
+// //      jobTitle: "Junior Software Developer"
+// //    },
+// //    { 
+// //      name: "Petra Python",
+// //      course: "Data Engineering",
+// //      graduationYear: 2019,
+// //      jobTitle: "Senior Data Engineer"
+// //    }
+// // ]
 
 
 // This function takes a multi-dimensional array as an argument. Hidden somewhere within this array, there may be the letter X.
@@ -340,24 +350,24 @@ addJobTitle([
 // Otherwise, the function should return a string stating the row and column of where the X was found: "X was found on row Y and 
 // column Z"
 
-function findTheX(grid) {
-    // Write your code here
-    }
+// function findTheX(grid) {
+//     // Write your code here
+//     }
 
-    findTheX([
-  ["S", "S", "S"],
-  ["S", "S", "S"] 
-]);
-// should return: "No X found"
+//     findTheX([
+//   ["S", "S", "S"],
+//   ["S", "S", "S"] 
+// ]);
+// // should return: "No X found"
 
-findTheX([
-  ["X", "S", "S"]
-]);
-// should return: "X was found on row 0 and column 0"
+// findTheX([
+//   ["X", "S", "S"]
+// ]);
+// // should return: "X was found on row 0 and column 0"
 
-findTheX([
-  ["S", "S", "S"],
-  ["S", "S", "S"],
-  ["S", "X", "S"] 
-]);
+// findTheX([
+//   ["S", "S", "S"],
+//   ["S", "S", "S"],
+//   ["S", "X", "S"] 
+// ]);
 // should return: "X was found on row 2 and column 1"
