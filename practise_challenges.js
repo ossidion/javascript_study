@@ -446,18 +446,54 @@ function oddOrEven(num) {
 
 // It should return a number showing the total cost of ordering one of each item per guest!
 
-function orderSupplies(supplies, guests) {
-    let counter = 0
-    for (const key in supplies) {
-        const value = supplies[key]
-        counter += value
+// function orderSupplies(supplies, guests) {
+//     let counter = 0
+//     for (const key in supplies) {
+//         const value = supplies[key]
+//         counter += value
+//     }
+//     counter = counter * guests
+//     return counter
+// }
+
+// orderSupplies({ cake: 2, iceCream: 7 }, 2);
+// // should return 18
+
+// orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20);
+// // should return 160
+
+
+
+
+// The function calculateTables takes two arguments, the number of guests and the number of seats around a table.
+
+// It should return an object with two properties: a key of tables with the value of the number tables, and a key of
+// remainingGuests with a value of the number of guests without a seat who will need to be added to one of the other tables.
+
+function calculateTables(guests, seats) {
+
+    const remainingGuests = guests % seats
+    const numberOfGuestsWithSeats = guests - remainingGuests
+    const numberOfTables = numberOfGuestsWithSeats / seats
+
+    const tableObject = {
+
     }
-    counter = counter * guests
-    return counter
-}
+    
+    tableObject.tables = numberOfTables
+    tableObject.remainingGuests = remainingGuests
 
-orderSupplies({ cake: 2, iceCream: 7 }, 2);
-// should return 18
 
-orderSupplies({ plates: 2, cups: 1, forks: 1, partyHats: 4 }, 20);
-// should return 160
+
+    return tableObject
+    }
+
+
+calculateTables(4, 2);
+// should return { tables: 2 , remainingGuests: 0 }
+
+calculateTables(14, 6);
+// should return { tables: 2 , remainingGuests: 2 }
+
+calculateTables(26, 5);
+// should return { tables: 5 , remainingGuests: 1 }
