@@ -470,30 +470,112 @@ function oddOrEven(num) {
 // It should return an object with two properties: a key of tables with the value of the number tables, and a key of
 // remainingGuests with a value of the number of guests without a seat who will need to be added to one of the other tables.
 
-function calculateTables(guests, seats) {
+// function calculateTables(guests, seats) {
 
-    const remainingGuests = guests % seats
-    const numberOfGuestsWithSeats = guests - remainingGuests
-    const numberOfTables = numberOfGuestsWithSeats / seats
+//     const remainingGuests = guests % seats
+//     const numberOfGuestsWithSeats = guests - remainingGuests
+//     const numberOfTables = numberOfGuestsWithSeats / seats
 
-    const tableObject = {
+//     const tableObject = {
 
-    }
+//     }
     
-    tableObject.tables = numberOfTables
-    tableObject.remainingGuests = remainingGuests
+//     tableObject.tables = numberOfTables
+//     tableObject.remainingGuests = remainingGuests
 
 
 
-    return tableObject
+//     return tableObject
+//     }
+
+
+// calculateTables(4, 2);
+// // should return { tables: 2 , remainingGuests: 0 }
+
+// calculateTables(14, 6);
+// // should return { tables: 2 , remainingGuests: 2 }
+
+// calculateTables(26, 5);
+// // should return { tables: 5 , remainingGuests: 1 }
+
+
+
+
+// Northdrivers Taxi Company™️ have asked for your help writing a function which will calculate the cost of getting to the party! 
+
+//Journeys are priced as follows:
+
+// Journeys up to 3 minutes long have a flat base rate cost of £5
+// Every minute after the first 3 will cost an extra 70p
+// The length of the journey is always rounded up to a whole number of minutes
+// The calculateTaxiFare function should take a number representing the length of a taxi journey in seconds, and return a number
+// representing the cost of that journey in pence.
+
+// function calculateTaxiFare(seconds) {
+//     let extraFare = 0
+//     let fare = 0
+
+//     let minutes = seconds / 60
+//     minutes = Math.ceil(minutes)
+
+//     if (minutes > 3) {
+//         extraFare = minutes - 3
+//         extraFare = extraFare * 70
+//         fare = 500 + extraFare
+//     } else {
+//         fare = 500
+//     }
+    
+// //     return console.log(fare)
+// // }
+
+// calculateTaxiFare(150);
+// // should return 500
+
+// calculateTaxiFare(360);
+// // should return 710
+
+// calculateTaxiFare(491);
+// // should return 920
+
+
+
+
+// a function which will select the winners based on two factors: how much they paid,
+// and their seat number. If both of these numbers are odd, the attendee wins a prize!
+
+// The pickWinners function will be passed an array of numbers representing ticket costs
+// as its only argument. The index position represents the seat number.
+
+// Your task is to return an array of objects. Each object should contain two keys.
+// The first key is seat with a value of the odd index. The second key is ticketCost with a 
+// value of the ticket price at that index in the input array.
+
+function pickWinners(numbers) {
+    let list = []
+    let objectArray = []
+    let object = {}
+    
+    for (let i = 0; i < numbers.length; i++) {
+        if (i % 2 === 1) {
+            if (numbers[i] % 2 === 1) {
+                list.push(i)
+                list.push(numbers[i])
+            }
+        }
     }
 
-
-calculateTables(4, 2);
-// should return { tables: 2 , remainingGuests: 0 }
-
-calculateTables(14, 6);
-// should return { tables: 2 , remainingGuests: 2 }
-
-calculateTables(26, 5);
-// should return { tables: 5 , remainingGuests: 1 }
+    for (let i = 0; i < list.length; i++) {
+        let i[seat] = {}
+        object.seat = list[i]
+        object.ticketCost = 
+        new Object 
+    }
+    return console.log(list)
+}
+pickWinners([6, 7, 12, 49])
+// should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
+pickWinners([1, 3, 5, 7, 9, 11])
+// should return [{seat: 1, ticketCost: 3}, {seat: 3, ticketCost: 7}, {seat: 5, ticketCost: 11} ]
+pickWinners([1, 6, 13, 8, 29, 50])
+// should return []
