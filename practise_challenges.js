@@ -551,31 +551,64 @@ function oddOrEven(num) {
 // The first key is seat with a value of the odd index. The second key is ticketCost with a 
 // value of the ticket price at that index in the input array.
 
-function pickWinners(numbers) {
-    let list = []
-    let objectArray = []
-    let object = {}
+// function pickWinners(numbers) {
+//     let list = []
+//     let objectArray = []
+
     
-    for (let i = 0; i < numbers.length; i++) {
-        if (i % 2 === 1) {
-            if (numbers[i] % 2 === 1) {
-                list.push(i)
-                list.push(numbers[i])
-            }
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (i % 2 === 1) {
+//             if (numbers[i] % 2 === 1) {
+//                 const object = {}
+//                 object.seat = i
+//                 object.ticketCost = numbers[i]
+//                 list.push(object)
+//             }
+//         }
+//     }
+//     return console.log(list)
+// }
+// pickWinners([6, 7, 12, 49])
+// // should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
+// pickWinners([1, 3, 5, 7, 9, 11])
+// // should return [{seat: 1, ticketCost: 3}, {seat: 3, ticketCost: 7}, {seat: 5, ticketCost: 11} ]
+// pickWinners([1, 6, 13, 8, 29, 50])
+// // should return []
+
+
+
+
+// You decide to break the feedback into three groups: positive (7-10), negative (0-3) or neutral (4-6).
+
+// The function gatherFeedback takes an array of arrays, each of these arrays contains both a string of 
+// the name of the attendee and a number showing how they rated the party out of 10.
+
+// It should return an object with three properties: a key of positive with a value of the number of
+// positive reviews; a key of negative with a value of the number of negative reviews; and, a key of neutral
+// with a value of the number of neutral reviews.
+
+function gatherFeedback(feedbackArray) {
+    feedbackObject = {positive: 0, negative: 0, neutral: 0}
+
+    for (let i = 0; i < feedbackArray.length; i++) {
+        // console.log(feedbackArray[i][1])
+        if (feedbackArray[i][1] > 0 && feedbackArray[i][1] <= 3) {
+            feedbackObject.negative += 1
+        } else if (feedbackArray[i][1] >= 4 && feedbackArray[i][1] <= 6) {
+            feedbackObject.neutral += 1
+        } else if (feedbackArray[i][1] >= 7 && feedbackArray[i][1] <= 10) {
+            feedbackObject.positive += 1
         }
     }
-
-    for (let i = 0; i < list.length; i++) {
-        let i[seat] = {}
-        object.seat = list[i]
-        object.ticketCost = 
-        new Object 
-    }
-    return console.log(list)
+    
+    return console.log(feedbackObject)
 }
-pickWinners([6, 7, 12, 49])
-// should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
-pickWinners([1, 3, 5, 7, 9, 11])
-// should return [{seat: 1, ticketCost: 3}, {seat: 3, ticketCost: 7}, {seat: 5, ticketCost: 11} ]
-pickWinners([1, 6, 13, 8, 29, 50])
-// should return []
+
+gatherFeedback([['maddie', 10], ['jatinder', 3], ['rose', 6]]);
+// returns {positive: 1, negative: 1, neutral:1}
+
+gatherFeedback([['maddie', 10], ['jatinder', 10], ['rose', 10]]);
+// returns {positive: 3, negative: 0, neutral:0}
+
+gatherFeedback([['maddie', 10], ['jatinder', 10], ['rose', 1]]);
+// returns {positive: 2, negative: 1, neutral:0}

@@ -1,3 +1,5 @@
+// 1 - Log To Number
+
 // function logToNumber(num) {
 //     const numberVariable = num
 //     let counter = 1
@@ -33,6 +35,7 @@
 
 
 
+// 2 - Calculate the Rental Cost
 
 // function calculateRentalCost(releaseDate, isMember) {
 //     const releaseDateVariable = releaseDate
@@ -68,6 +71,7 @@
 // // should return 3
 
 
+// 3 - Count The Letters
 
 // function countTheLetters(string, letter) {
 //     const stringVariable = string
@@ -103,6 +107,7 @@
 // // should return 0
 
 
+// 4 - Sum the 3s and 5s
 
 // function sumTheThreesAndFives(numbers) {
 //     let numberVariable = numbers
@@ -136,6 +141,9 @@
 // // should return 21
 
 
+
+// 5 - Cargo Capacity Checker
+
 // function checkCargoCapacity(cargoItems, maxCapacity) {
 // //     const cargoItemsVariable = cargoItems
 // //     const maxCapacityVariable = maxCapacity
@@ -164,6 +172,7 @@
 
 
 
+// 6 - From Shelf to Basket
 
 // The function, transferProduct, has been created, but it's currently failing the tests.
 
@@ -175,21 +184,11 @@
 
 
 // function transferProduct(shelf, basket, product) {
-//     const productToTransfer = shelf[product];
-//     basket[product] = productToTransfer;
-//     delete shelf[product];
-// }
-
-
-// function transferProduct(shelf, basket, product) {
 //     const productToTransfer = shelf[product]; // dynamic variable (accessed via [] rather than .)
 //     basket[product] = productToTransfer;
-//     console.log(basket)
 //     delete shelf[product]
+//     console.log(basket[product])
 // }
-
-
-
 
 
 // const shelf = { apple: "Keeps the doctor away", lamp: "Shedding light on the situation" };
@@ -203,6 +202,8 @@
 
 
 
+// 7 - Update the Student's Grades
+
 // This function takes an object containing a subject key and a grade value expressed as a number out of 100.
 
 // Iterate through the grades object, and for each subject:
@@ -211,33 +212,36 @@
 // Otherwise, change the grade to "fail".
 // The function should return the updated grades object.
 
-function updateStudentGrades(grades) {
-    for (const key in grades) {
-        const value = grades[key] // accessing the value held in each key via dynamic variable.
-        if (value >= 70) {
-            grades[key] = "pass"
-        } else {
-            grades[key] = "fail"
-        }
-    }
-    return console.log(grades)
-}
+// function updateStudentGrades(grades) {
+//     for (const key in grades) {             // Iterate through each key of the 'grades' object.
+//         const grade = grades[key]           // Store the value of this iteration of the keys in variable 'grade'.
+//         if (grade >= 70) {              
+//             grades[key] = "pass"            // Accessing the value of this iteration of the properties and updating it with 'pass'.
+//         } else {
+//             grades[key] = "fail"            // Accessing the value of this iteration of the properties and updating it with 'fail'.
+//         }
+//     }
 
-updateStudentGrades({ maths: 85 });
-// should return { maths: "pass" }
+    
+//     return console.log(grades)
+// }
 
-updateStudentGrades({ english: 70 });
-// should return { english: "pass" }
+// updateStudentGrades({ maths: 85 });
+// // should return { maths: "pass" }
 
-updateStudentGrades({ science: 60 });
-// should return { science: "fail" }
+// updateStudentGrades({ english: 70 });
+// // should return { english: "pass" }
 
-updateStudentGrades({ maths: 85, english: 60 });
-// should return { maths: "pass", english: "fail" }
+// updateStudentGrades({ science: 60 });
+// // should return { science: "fail" }
+
+// updateStudentGrades({ maths: 85, english: 60 });
+// // should return { maths: "pass", english: "fail" }
 
 
 
 
+// 8 - Return The Middle Character
 
 // This function takes a string of at least one character, and it should return the middle character(s) from that string.
 
@@ -245,24 +249,40 @@ updateStudentGrades({ maths: 85, english: 60 });
 // it should return the middle two characters concatenated together.
 
 // function returnMiddleCharacter(string) {
-//     // Write your code here
-//     }
+//     const stringLength = string.length
+//     const halfStringLength = string.length / 2
+//     const halfStringLengthMinusOne = halfStringLength - 1
+//     const halfStringLengthPlusOne = halfStringLength + 1
+//     const oddString = halfStringLength - 0.5
+//     let stringReturn = ""
+    
+//     if (stringLength % 2 === 0) {
+//         stringReturn = string.slice(halfStringLengthMinusOne, halfStringLengthPlusOne)
+//     } else (stringReturn = string[oddString])
+    
+//     console.log(stringReturn)
+// }
 
-//     middleOfTheMiddle("dog");
-//     // should return "o"
-    
-//     middleOfTheMiddle("dogs");
-//     // should return "og"
-    
-//     middleOfTheMiddle("sweet candy")
-//     // should return " "
-    
-//     middleOfTheMiddle("I'll be back");
-//     // should return "be"
-    
-//     middleOfTheMiddle("The quick brown fox jumps over the lazy dog");
-//     // should return "u"
+// returnMiddleCharacter("dog");
+// // should return "o"
 
+// returnMiddleCharacter("alexanders");
+// // should return "og"
+
+// returnMiddleCharacter("sweet candy")
+// // should return " "
+
+// returnMiddleCharacter("I'll be back");
+// // should return "be"
+
+// returnMiddleCharacter("The quick brown fox jumps over the lazy dog");
+// // should return "u"
+
+
+
+
+
+// 9 - Get Nested First And Last
 
 // This function takes a multi-dimensional array as an argument. It should return an array containing the first element of
 // the first nested array, and the last element of the last nested array. If the input array only contains one nested array,
@@ -271,8 +291,21 @@ updateStudentGrades({ maths: 85, english: 60 });
 // If the original input array is empty (i.e. no nested arrays within it), then the function should return an empty array.
 
 // function getNestedFirstAndLast(array) {
-//     // Write your code here
+    
+// let arrayList = []  // Initialize empty list to store results.
+
+//     if (array.length > 0) {     // Condition so that we only execute block if more than 0 otherwise program crash.
+//         const arrayLength = array.length    // Store length of array in variable.
+//         const arrayEnd = arrayLength - 1    // Store length of array - 1 in variable to access element 0 in array.
+//         const nestedArray = array[arrayEnd] // Store last list in variable. 
+//         const nestedArrayEnd = nestedArray.length -1    // Store length of last list - 1 in variable to access last element in inner list.
+
+//         arrayList.push(array[0][0])     // Accessing and pushing list 0 and integer 0 of nested array.
+//         arrayList.push(array[arrayEnd][nestedArrayEnd]) // Accessing and pushing final list and final integer of nested array. 
 //     }
+
+//     console.log(arrayList)
+// }
 
 // getNestedFirstAndLast([[ 16 ], [ 82 ]]);
 // // should return [ 16, 82 ]
@@ -289,6 +322,8 @@ updateStudentGrades({ maths: 85, english: 60 });
 
 
 
+// 10 - Add Job Title
+
 // This function takes an array of objects representing graduates with three properties, name, course and graduationYear.
 
 // The function should add a new property to each object called jobTitle with a value based on the graduate's course and graduationYear:
@@ -300,8 +335,31 @@ updateStudentGrades({ maths: 85, english: 60 });
 // The function should then return the array of graduates with the new property on each object.
 
 // function addJobTitle(graduates) {
-//     // Write your code here
+//     const seniorSoftwareDeveloper = "Senior Software Developer" 
+//     const juniorSoftwareDeveloper = "Junior Software Developer"
+//     const seniorDataEngineer = "Senior Data Engineer"
+//     const juniorDataEngineer = "Junior Data Engineer"
+
+
+//     for (let i = 0; i < graduates.length; i ++) {
+//         if (graduates[i].course === "Software Development") {   // Acccessing the course property object iteration and expressing conditional. 
+//             if (graduates[i].graduationYear < 2020) {           // Accessing graduation year of object iteration and expressing conditional. 
+//                 graduates[i].jobTitle = seniorSoftwareDeveloper // Declaring new property within current object iteration.
+//             } else {
+//                 graduates[i].jobTitle = juniorSoftwareDeveloper
+//             }
+//         } else {
+//             if (graduates[i].graduationYear < 2020) {
+//                 graduates[i].jobTitle = seniorDataEngineer
+//             } else {
+//                 graduates[i].jobTitle = juniorDataEngineer
+//             }
+            
+//         }
+        
 //     }
+//     return console.log(graduates)
+// }
 
 // addJobTitle([{ name: "Jonny JavaScript", course: "Software Development", graduationYear: 2018 }]);
 // // should return [
@@ -327,21 +385,24 @@ updateStudentGrades({ maths: 85, english: 60 });
 //   { name: "Jonny JavaScript", course: "Software Development", graduationYear: 2020 },
 //   { name: "Petra Python", course: "Data Engineering", graduationYear: 2019 }
 //   ]);
-// // should return [
-// //    { 
-// //      name: "Jonny JavaScript", 
-// //      course: "Software Development",
-// //      graduationYear: 2020,
-// //      jobTitle: "Junior Software Developer"
-// //    },
-// //    { 
-// //      name: "Petra Python",
-// //      course: "Data Engineering",
-// //      graduationYear: 2019,
-// //      jobTitle: "Senior Data Engineer"
-// //    }
-// // ]
+// should return [
+//    { 
+//      name: "Jonny JavaScript", 
+//      course: "Software Development",
+//      graduationYear: 2020,
+//      jobTitle: "Junior Software Developer"
+//    },
+//    { 
+//      name: "Petra Python",
+//      course: "Data Engineering",
+//      graduationYear: 2019,
+//      jobTitle: "Senior Data Engineer"
+//    }
+// ]
 
+
+
+// 11 - Find the "X" in the Grid
 
 // This function takes a multi-dimensional array as an argument. Hidden somewhere within this array, there may be the letter X.
 
@@ -350,24 +411,49 @@ updateStudentGrades({ maths: 85, english: 60 });
 // Otherwise, the function should return a string stating the row and column of where the X was found: "X was found on row Y and 
 // column Z"
 
-// function findTheX(grid) {
-//     // Write your code here
-//     }
+function findTheX(grid) {
 
-//     findTheX([
-//   ["S", "S", "S"],
-//   ["S", "S", "S"] 
-// ]);
-// // should return: "No X found"
+    let counter = 0
+    let xFoundMessgae = "No X found"
 
-// findTheX([
-//   ["X", "S", "S"]
-// ]);
-// // should return: "X was found on row 0 and column 0"
 
-// findTheX([
-//   ["S", "S", "S"],
-//   ["S", "S", "S"],
-//   ["S", "X", "S"] 
-// ]);
+    for (let i = 0; i < grid.length; i ++) {
+        for (let x = 0; x < grid[i].length; x ++) {
+            // console.log(grid[i][x])
+            if (grid[i][x] === "X") {
+                xFoundMessgae = `X was found on row ${[i]} and column ${[x]}`
+                continue
+            }
+        continue
+        }
+    }
+
+    return console.log(xFoundMessgae)
+
+    // const xNotFoundMessage = "No X found"
+
+    // if (counter > 0) {
+    //     return console.log(xFoundMessgae)
+    // } else {
+    //     return console.log(xNotFoundMessage)
+    // }
+
+}
+
+    findTheX([
+  ["S", "S", "S"],
+  ["S", "S", "S"] 
+]);
+// should return: "No X found"
+
+findTheX([
+  ["X", "S", "S"]
+]);
+// should return: "X was found on row 0 and column 0"
+
+findTheX([
+  ["S", "S", "S"],
+  ["S", "S", "S"],
+  ["S", "X", "S"] 
+]);
 // should return: "X was found on row 2 and column 1"
