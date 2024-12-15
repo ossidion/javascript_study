@@ -290,34 +290,35 @@
 
 // If the original input array is empty (i.e. no nested arrays within it), then the function should return an empty array.
 
-// function getNestedFirstAndLast(array) {
+function getNestedFirstAndLast(array) {
     
-// let arrayList = []  // Initialize empty list to store results.
+let arrayList = []  // Initialize empty list to store results. This will be returned as empty array if 'array' argument is empty.
 
-//     if (array.length > 0) {     // Condition so that we only execute block if more than 0 otherwise program crash.
-//         const arrayLength = array.length    // Store length of array in variable.
-//         const arrayEnd = arrayLength - 1    // Store length of array - 1 in variable to access element 0 in array.
-//         const nestedArray = array[arrayEnd] // Store last list in variable. 
-//         const nestedArrayEnd = nestedArray.length -1    // Store length of last list - 1 in variable to access last element in inner list.
+    if (array.length > 0) {     // Condition so that we only execute block if more than 0 otherwise program crash.
+                                // i.e. will be trying to seek arrayLength - 1 below for our 'arrayEnd' variable, which won't exist if 0. 
+        const arrayLength = array.length    // Store length of array in variable.
+        const arrayEnd = arrayLength - 1    // Store length of array - 1 in variable to access last element in outer array.
+        const nestedArray = array[arrayEnd] // Store last list in variable and access it in line below. 
+        const nestedArrayEnd = nestedArray.length -1    // Store length of last list - 1 in variable to access last element in inner list.
 
-//         arrayList.push(array[0][0])     // Accessing and pushing list 0 and integer 0 of nested array.
-//         arrayList.push(array[arrayEnd][nestedArrayEnd]) // Accessing and pushing final list and final integer of nested array. 
-//     }
+        arrayList.push(array[0][0])     // Accessing and pushing list 0 and integer 0 of nested array.
+        arrayList.push(array[arrayEnd][nestedArrayEnd]) // Accessing and pushing final list and final integer of nested array. 
+    }
 
-//     console.log(arrayList)
-// }
+    console.log(arrayList)
+}
 
-// getNestedFirstAndLast([[ 16 ], [ 82 ]]);
-// // should return [ 16, 82 ]
+getNestedFirstAndLast([[ 16 ], [ 82 ]]);
+// should return [ 16, 82 ]
 
-// getNestedFirstAndLast([[ 2, 79, 13 ], [ 16, 34, 45 ], [ 21, 9, 98 ]]);
-// // should return [ 2, 98 ]
+getNestedFirstAndLast([[ 2, 79, 13 ], [ 16, 34, 45 ], [ 21, 9, 98 ]]);
+// should return [ 2, 98 ]
 
-// getNestedFirstAndLast([[ 16, 22 ]]);
-// // should return [ 16, 22 ]
+getNestedFirstAndLast([[ 16, 22 ]]);
+// should return [ 16, 22 ]
 
-// getNestedFirstAndLast([]);
-// // should return []
+getNestedFirstAndLast([]);
+// should return []
 
 
 
@@ -381,24 +382,24 @@
 // //   }
 // // ]
 
-// addJobTitle([
-//   { name: "Jonny JavaScript", course: "Software Development", graduationYear: 2020 },
-//   { name: "Petra Python", course: "Data Engineering", graduationYear: 2019 }
-//   ]);
-// should return [
-//    { 
-//      name: "Jonny JavaScript", 
-//      course: "Software Development",
-//      graduationYear: 2020,
-//      jobTitle: "Junior Software Developer"
-//    },
-//    { 
-//      name: "Petra Python",
-//      course: "Data Engineering",
-//      graduationYear: 2019,
-//      jobTitle: "Senior Data Engineer"
-//    }
-// ]
+// // addJobTitle([
+// //   { name: "Jonny JavaScript", course: "Software Development", graduationYear: 2020 },
+// //   { name: "Petra Python", course: "Data Engineering", graduationYear: 2019 }
+// //   ]);
+// // should return [
+// //    { 
+// //      name: "Jonny JavaScript", 
+// //      course: "Software Development",
+// //      graduationYear: 2020,
+// //      jobTitle: "Junior Software Developer"
+// //    },
+// //    { 
+// //      name: "Petra Python",
+// //      course: "Data Engineering",
+// //      graduationYear: 2019,
+// //      jobTitle: "Senior Data Engineer"
+// //    }
+// // ]
 
 
 
@@ -411,49 +412,36 @@
 // Otherwise, the function should return a string stating the row and column of where the X was found: "X was found on row Y and 
 // column Z"
 
-function findTheX(grid) {
+// function findTheX(grid) {
 
-    let counter = 0
-    let xFoundMessgae = "No X found"
+//     let xFoundMessgae = "No X found"
 
+//     for (let i = 0; i < grid.length; i ++) {            // Loop through rows.
+//         for (let x = 0; x < grid[i].length; x ++) {     // Loop through the columns within each row iteration. 
+//             if (grid[i][x] === "X") {                   // Conditional if current position is = "X".
+//                 xFoundMessgae = `X was found on row ${[i]} and column ${[x]}`   // Using current iterations [i][x] to provide
+//                                                                                 // element position.   
+//             }
+//         }
+//     }
 
-    for (let i = 0; i < grid.length; i ++) {
-        for (let x = 0; x < grid[i].length; x ++) {
-            // console.log(grid[i][x])
-            if (grid[i][x] === "X") {
-                xFoundMessgae = `X was found on row ${[i]} and column ${[x]}`
-                continue
-            }
-        continue
-        }
-    }
+//     return console.log(xFoundMessgae)
+// // }
 
-    return console.log(xFoundMessgae)
+//     findTheX([
+//   ["S", "S", "S"],
+//   ["S", "S", "S"] 
+// ]);
+// // should return: "No X found"
 
-    // const xNotFoundMessage = "No X found"
+// findTheX([
+//   ["X", "S", "S"]
+// ]);
+// // should return: "X was found on row 0 and column 0"
 
-    // if (counter > 0) {
-    //     return console.log(xFoundMessgae)
-    // } else {
-    //     return console.log(xNotFoundMessage)
-    // }
-
-}
-
-    findTheX([
-  ["S", "S", "S"],
-  ["S", "S", "S"] 
-]);
-// should return: "No X found"
-
-findTheX([
-  ["X", "S", "S"]
-]);
-// should return: "X was found on row 0 and column 0"
-
-findTheX([
-  ["S", "S", "S"],
-  ["S", "S", "S"],
-  ["S", "X", "S"] 
-]);
-// should return: "X was found on row 2 and column 1"
+// findTheX([
+//   ["S", "S", "S"],
+//   ["S", "S", "S"],
+//   ["S", "X", "S"] 
+// ]);
+// // should return: "X was found on row 2 and column 1"

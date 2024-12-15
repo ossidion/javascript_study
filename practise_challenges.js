@@ -587,28 +587,28 @@ function oddOrEven(num) {
 // positive reviews; a key of negative with a value of the number of negative reviews; and, a key of neutral
 // with a value of the number of neutral reviews.
 
-function gatherFeedback(feedbackArray) {
-    feedbackObject = {positive: 0, negative: 0, neutral: 0}
+// function gatherFeedback(feedbackArray) {
+//     feedbackObject = {positive: 0, negative: 0, neutral: 0}
 
-    for (let i = 0; i < feedbackArray.length; i++) {
-        // console.log(feedbackArray[i][1])
-        if (feedbackArray[i][1] > 0 && feedbackArray[i][1] <= 3) {
-            feedbackObject.negative += 1
-        } else if (feedbackArray[i][1] >= 4 && feedbackArray[i][1] <= 6) {
-            feedbackObject.neutral += 1
-        } else if (feedbackArray[i][1] >= 7 && feedbackArray[i][1] <= 10) {
-            feedbackObject.positive += 1
-        }
-    }
+//     for (let i = 0; i < feedbackArray.length; i++) {
+//         // console.log(feedbackArray[i][1])
+//         if (feedbackArray[i][1] > 0 && feedbackArray[i][1] <= 3) {
+//             feedbackObject.negative += 1
+//         } else if (feedbackArray[i][1] >= 4 && feedbackArray[i][1] <= 6) {
+//             feedbackObject.neutral += 1
+//         } else if (feedbackArray[i][1] >= 7 && feedbackArray[i][1] <= 10) {
+//             feedbackObject.positive += 1
+//         }
+//     }
     
-    return console.log(feedbackObject)
-}
+//     return console.log(feedbackObject)
+// }
 
-gatherFeedback([['maddie', 10], ['jatinder', 3], ['rose', 6]]);
-// returns {positive: 1, negative: 1, neutral:1}
+// gatherFeedback([['maddie', 10], ['jatinder', 3], ['rose', 6]]);
+// // returns {positive: 1, negative: 1, neutral:1}
 
-gatherFeedback([['maddie', 10], ['jatinder', 10], ['rose', 10]]);
-// returns {positive: 3, negative: 0, neutral:0}
+// gatherFeedback([['maddie', 10], ['jatinder', 10], ['rose', 10]]);
+// // returns {positive: 3, negative: 0, neutral:0}
 
-gatherFeedback([['maddie', 10], ['jatinder', 10], ['rose', 1]]);
-// returns {positive: 2, negative: 1, neutral:0}
+// gatherFeedback([['maddie', 10], ['jatinder', 10], ['rose', 1]]);
+// // returns {positive: 2, negative: 1, neutral:0}
