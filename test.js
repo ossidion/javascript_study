@@ -212,31 +212,31 @@
 // Otherwise, change the grade to "fail".
 // The function should return the updated grades object.
 
-// function updateStudentGrades(grades) {
-//     for (const key in grades) {             // Iterate through each key of the 'grades' object.
-//         const grade = grades[key]           // Store the value of this iteration of the keys in variable 'grade'.
-//         if (grade >= 70) {              
-//             grades[key] = "pass"            // Accessing the value of this iteration of the properties and updating it with 'pass'.
-//         } else {
-//             grades[key] = "fail"            // Accessing the value of this iteration of the properties and updating it with 'fail'.
-//         }
-//     }
+function updateStudentGrades(grades) {
+    for (const key in grades) {             // Iterate through each key of the 'grades' object.
+        const grade = grades[key]           // Store the value of this iteration of the keys in variable 'grade'.
+        if (grade >= 70) {              
+            grades[key] = "pass"            // Accessing the value of this iteration of the properties and updating it with 'pass'.
+        } else {
+            grades[key] = "fail"            // Accessing the value of this iteration of the properties and updating it with 'fail'.
+        }
+    }
 
     
-//     return console.log(grades)
-// }
+    return console.log(grades)
+}
 
-// updateStudentGrades({ maths: 85 });
-// // should return { maths: "pass" }
+updateStudentGrades({ maths: 85 });
+// should return { maths: "pass" }
 
-// updateStudentGrades({ english: 70 });
-// // should return { english: "pass" }
+updateStudentGrades({ english: 70 });
+// should return { english: "pass" }
 
-// updateStudentGrades({ science: 60 });
-// // should return { science: "fail" }
+updateStudentGrades({ science: 60 });
+// should return { science: "fail" }
 
-// updateStudentGrades({ maths: 85, english: 60 });
-// // should return { maths: "pass", english: "fail" }
+updateStudentGrades({ maths: 85, english: 60 });
+// should return { maths: "pass", english: "fail" }
 
 
 
@@ -249,16 +249,16 @@
 // it should return the middle two characters concatenated together.
 
 // function returnMiddleCharacter(string) {
-//     const stringLength = string.length
-//     const halfStringLength = string.length / 2
-//     const halfStringLengthMinusOne = halfStringLength - 1
-//     const halfStringLengthPlusOne = halfStringLength + 1
-//     const oddString = halfStringLength - 0.5
+//     const stringLength = string.length  // Getting length of string.
+//     const halfStringLength = string.length / 2  // Halving the length of the string.
+//     const halfStringLengthMinusOne = halfStringLength - 1   // Storing halfsting length -1 for even length string.
+//     const halfStringLengthPlusOne = halfStringLength + 1    // Storing halfsting length +1 for even length string.
+//     const oddString = halfStringLength - 0.5    // Storing halfsting length -0.5 for odd length string.
 //     let stringReturn = ""
     
-//     if (stringLength % 2 === 0) {
-//         stringReturn = string.slice(halfStringLengthMinusOne, halfStringLengthPlusOne)
-//     } else (stringReturn = string[oddString])
+//     if (stringLength % 2 === 0) {   // If even conditional
+//         stringReturn = string.slice(halfStringLengthMinusOne, halfStringLengthPlusOne)  // Slice two middle characters if even length. 
+//     } else (stringReturn = string[oddString])   // Slice middle character if odd length.
     
 //     console.log(stringReturn)
 // }
@@ -290,35 +290,35 @@
 
 // If the original input array is empty (i.e. no nested arrays within it), then the function should return an empty array.
 
-function getNestedFirstAndLast(array) {
+// function getNestedFirstAndLast(array) {
     
-let arrayList = []  // Initialize empty list to store results. This will be returned as empty array if 'array' argument is empty.
+// let arrayList = []  // Initialize empty list to store results. This will be returned as empty array if 'array' argument is empty.
 
-    if (array.length > 0) {     // Condition so that we only execute block if more than 0 otherwise program crash.
-                                // i.e. will be trying to seek arrayLength - 1 below for our 'arrayEnd' variable, which won't exist if 0. 
-        const arrayLength = array.length    // Store length of array in variable.
-        const arrayEnd = arrayLength - 1    // Store length of array - 1 in variable to access last element in outer array.
-        const nestedArray = array[arrayEnd] // Store last list in variable and access it in line below. 
-        const nestedArrayEnd = nestedArray.length -1    // Store length of last list - 1 in variable to access last element in inner list.
+//     if (array.length > 0) {     // Condition so that we only execute block if more than 0 otherwise program crash.
+//                                 // i.e. will be trying to seek arrayLength - 1 below for our 'arrayEnd' variable, which won't exist if 0. 
+//         const arrayLength = array.length    // Store length of array in variable.
+//         const arrayEnd = arrayLength - 1    // Store length of array - 1 in variable to access last element in outer array.
+//         const nestedArray = array[arrayEnd] // Store last list in variable and access it in line below. 
+//         const nestedArrayEnd = nestedArray.length -1    // Store length of last list - 1 in variable to access last element in inner list.
 
-        arrayList.push(array[0][0])     // Accessing and pushing list 0 and integer 0 of nested array.
-        arrayList.push(array[arrayEnd][nestedArrayEnd]) // Accessing and pushing final list and final integer of nested array. 
-    }
+//         arrayList.push(array[0][0])     // Accessing and pushing list 0 and integer 0 of nested array.
+//         arrayList.push(array[arrayEnd][nestedArrayEnd]) // Accessing and pushing final list and final integer of nested array. 
+//     }
 
-    console.log(arrayList)
-}
+//     console.log(arrayList)
+// }
 
-getNestedFirstAndLast([[ 16 ], [ 82 ]]);
-// should return [ 16, 82 ]
+// getNestedFirstAndLast([[ 16 ], [ 82 ]]);
+// // should return [ 16, 82 ]
 
-getNestedFirstAndLast([[ 2, 79, 13 ], [ 16, 34, 45 ], [ 21, 9, 98 ]]);
-// should return [ 2, 98 ]
+// getNestedFirstAndLast([[ 2, 79, 13 ], [ 16, 34, 45 ], [ 21, 9, 98 ]]);
+// // should return [ 2, 98 ]
 
-getNestedFirstAndLast([[ 16, 22 ]]);
-// should return [ 16, 22 ]
+// getNestedFirstAndLast([[ 16, 22 ]]);
+// // should return [ 16, 22 ]
 
-getNestedFirstAndLast([]);
-// should return []
+// getNestedFirstAndLast([]);
+// // should return []
 
 
 
