@@ -1,0 +1,67 @@
+// function countdownFromNumber(num) {
+
+//     // let counter = num
+//     // console.log(counter)
+
+//     for (let i = num; i > 0; i--)
+//         console.log(i)
+//         // counter -= 1
+// }
+
+
+// countdownFromNumber(1);
+// // should produce 1 log
+// // 1
+
+// countdownFromNumber(3);
+// // should produce 3 logs
+// // 3
+// // 2
+// // 1
+
+// countdownFromNumber(10);
+// // should console 10 logs
+// // 10
+// // 9
+// // ...
+// // 2
+// // 1
+
+
+
+
+function countTheCapitals(string) {
+
+    let counter = 0
+
+    let strList = string.split("")
+    
+    for (let i = 0; i < strList.length; i++) {
+        if (strList[i] === " ") {
+            counter += 0
+        }
+        else if (strList[i] === strList[i].toUpperCase()) {
+            counter += 1
+        }
+    }
+    return console.log(counter)
+
+}
+
+
+
+
+countTheCapitals("a");
+// should return 0
+
+countTheCapitals("A");
+// should return 1
+
+countTheCapitals("NORTHCODERS");
+// should return 11
+
+countTheCapitals("Hello there WORLD");
+// should return 6
+
+countTheCapitals("");
+// should return 0
