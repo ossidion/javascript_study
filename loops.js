@@ -16,26 +16,26 @@ console.log(i)
 // Running through code and translating it into human language - especially non-linear code like loops - is an extremely important 
 // skill. It allows you to interrogate your code, which is particularly important when debugging, or explaining your code to other people.
 
-const todoList = ['do the laundry', 'make dinner', 'mount the spice rack'];
+// const todoList = ['do the laundry', 'make dinner', 'mount the spice rack'];
 
-for (let i = 0; i < todoList.length; i++) {
-  const job = todoList[i]
-  console.log('It\'s time to ' + job)
-};
+// for (let i = 0; i < todoList.length; i++) {
+//   const job = todoList[i]
+//   console.log('It\'s time to ' + job)
+// };
 
-for (let i = todoList.length - 1; i >= 0; i--) {
-    // code to execute
-    const job = todoList[i]
-    console.log('It\'s time to ' + job)
-  };
+// for (let i = todoList.length - 1; i >= 0; i--) {
+//     // code to execute
+//     const job = todoList[i]
+//     console.log('It\'s time to ' + job)
+//   };
 
 
-const array = [4, 8, 12, 16, 20, 24, 28, 32];
+// const array = [4, 8, 12, 16, 20, 24, 28, 32];
   
-// for (let i = 0; i < array.length; i++){
-//     const number = array[i]
-//     console.log(number)
-//   }
+// // for (let i = 0; i < array.length; i++){
+// //     const number = array[i]
+// //     console.log(number)
+// //   }
   
 // iterate through only the first half of an array.
 console.log('iterate through only the first half of an array.')
