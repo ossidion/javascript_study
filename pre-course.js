@@ -425,38 +425,241 @@
 
 
 
-function pluraliseKeys(obj) {
-  let newObject = {}
+// function pluraliseKeys(obj) {
+//   let newObject = {}
 
-  for (let key in obj) {
-    let type = typeof obj[key]
-    // console.log(type)
-    if (type === "string") {
-      newObject[key] = obj[key]
-    } else if (type === "object") {
+//   for (let key in obj) {
+//     let type = typeof obj[key]
+//     // console.log(type)
+//     if (type === "string") {
+//       newObject[key] = obj[key]
+//     } else if (type === "object") {
 
-      // console.log("yes")
-      if (obj[key].length > 1) {
-        // console.log(obj[key], obj[key].length)
-        let newKeyName = key + "s"
-        // console.log(newKeyName)
-        newObject[newKeyName] = obj[key]
-      } else {
-        newObject[key] = obj[key]
-      } 
+//       // console.log("yes")
+//       // if (obj[key].length > 1) {
+//         // console.log(obj[key], obj[key].length)
+//       let newKeyName = key + "s"
+//         // console.log(newKeyName)
+//       newObject[newKeyName] = obj[key]
+//     } else {
+//       newObject[key] = obj[key]
+       
+//     }
+//   }
+//   return console.log(newObject)
+// }
+
+
+
+// pluraliseKeys({
+//   name: 'Tom',
+//   job: ['writing katas', 'marking'],
+//   favouriteShop: [
+//   "Paul's Donkey University",
+//   "Shaq's Taxidermy Shack",
+//   "Sam's Pet Shop"
+//   ]
+// }) 
+
+
+
+
+
+// function validMobileNumber(mobileNumber) {
+//   let answer = false
+//   if (mobileNumber[0] === "0" && mobileNumber[1] === "7") {
+//     if (mobileNumber.length == 11) {
+//       let restOfNumber = mobileNumber.slice(2, )
+//       let isNumber = !isNaN(restOfNumber)
+//         if (isNumber === true) {
+//           answer = true
+//         }
+//     }
+//   } else if (mobileNumber.slice(0, 4) === "+447") {
+//     if (mobileNumber.length == 13) {
+//       let restOfNumber = mobileNumber.slice(2, )
+//       let isNumber = !isNaN(restOfNumber)
+//         if (isNumber === true) {
+//           answer = true
+//         }
+//     }
+//   } else if (mobileNumber.slice(0, 5) === "00447") {
+//     if (mobileNumber.length == 14) {
+//       let restOfNumber = mobileNumber.slice(2, )
+//       let isNumber = !isNaN(restOfNumber)
+//         if (isNumber === true) {
+//           answer = true
+//         }
+//     }
+//   }
+//   return console.log(answer)
+// }
+
+
+
+// validMobileNumber('07726') // returns false
+
+// validMobileNumber('07123456789') // returns true
+
+// validMobileNumber('+447123456789') // returns true
+
+// validMobileNumber('00447123456789') // returns true
+
+// validMobileNumber('0712345678!') // returns false
+
+
+
+// function getFactorials(nums) {
+  
+//   let answerList = []
+
+
+//   for (let i = 0; i < nums.length; i ++) {
+//     let answer = 1
+//     if (nums[i] == 0 || nums[i] == 1) {
+//       answerList.push(nums[i])
+//     } else if (nums[i] > 1) {
+//       for (let x = nums[i]; x >= 1; x--) {
+//         answer = answer * x
+//       }
+//       answerList.push(answer)
+//     }
+//   }
+//   return console.log(answerList)
+// }
+
+// getFactorials([3]) // returns [6]
+
+// getFactorials([3, 4]) // returns [6, 24]
+
+// getFactorials([1, 5, 2]) // returns [1, 120, 2]
+
+// getFactorials([]) // returns []
+
+
+
+
+// function findLargestNumber(number) {
+//   let str = String(number)
+//   let sorted = str.split("")
+//   sorted.sort()
+//   sorted.reverse()
+//   return console.log(sorted)
+// // }
+
+
+// findLargestNumber(3) // returns 3
+
+// findLargestNumber(123) // returns 321
+
+// findLargestNumber(937846) // returns 987643
+
+// findLargestNumber(43) // returns 43
+
+
+
+
+// function generateMatrix(number) {
+//   let rows = number
+//   let columns = number
+
+//   let arr = new Array(rows).fill(null)
+//   for (let i = 0; i < rows; i++) {
+//     arr[i] = new Array(columns).fill(null)
+//   }
+
+//   return console.log(arr)
+// }
+  // let arr = [null]
+  // for (i = 0; i < number.length; i++) {
+  //   for (x = 0; x < number.length; x++) {
+  //     arr = arr * x
+  //   }
+  // return console.log(arr)
+  // }
+
+
+
+// generateMatrix(1) // returns [[null]]
+
+// generateMatrix(2) // returns [[null, null], [null, null]]
+
+// generateMatrix(3) // returns [[null, null, null], [null, null, null], [null, null, null]]
+
+
+
+// function findWrongWayFruit(orchard) {
+//   let maxCount = 0
+//   let elementMaxFreq = ""
+//   let answer = 0
+
+//   for (let i = 0; i < orchard.length; i++) {
+//     let count = 0
+
+//     for (let x = 0; x < orchard.length; x++) {
+//       if (orchard[i] == orchard[x]) {
+//         count ++
+//       }
+//     }
+
+//     if (count > maxCount) {
+//       maxCount = count
+//       elementMaxFreq = orchard[i]
+//     }
+//   }
+
+//   if (orchard.length > 2) {
+//     for (let i = 0; i < orchard.length; i++) {
+//       if (orchard[i] != elementMaxFreq) {
+//         answer = i
+//       }
+//     }  
+//   }
+  
+//   return console.log(answer)
+  
+// }
+
+
+
+// findWrongWayFruit(['apple', 'apple', 'elppa']) // returns 2
+
+// findWrongWayFruit(['apple', 'elppa', 'apple']) // returns 1
+
+// findWrongWayFruit(['banana', 'ananab', 'banana', 'banana']) // returns 1
+
+// findWrongWayFruit(['apple', 'elppa']) // returns 0 as we can't tell which one is the right way round
+
+
+
+
+
+function matchDnaPairs(dnaString) {
+  let dnaList = dnaString.split("")
+  // console.log(dnaList)
+  let processedList = []
+  let newCase = ""
+  for (let i = 0; i < dnaList.length; i++) {
+    if (dnaList[i].toUpperCase() == 'G') {
+      newCase = 'GC'
+      processedList.push(newCase)
+    } else if (dnaList[i].toUpperCase() == 'C') {
+      newCase = 'CG'
+      processedList.push(newCase)
+    }  else if (dnaList[i].toUpperCase() == 'T') {
+      newCase = 'TA'
+      processedList.push(newCase)
+    } else if (dnaList[i].toUpperCase() == 'A') {
+      newCase = 'AT'
+      processedList.push(newCase)
     }
   }
-  return console.log(newObject)
+  return console.log(processedList)
 }
 
 
 
-pluraliseKeys({
-  name: 'Tom',
-  job: ['writing katas', 'marking'],
-  favouriteShop: [
-  "Paul's Donkey University",
-  "Shaq's Taxidermy Shack",
-  "Sam's Pet Shop"
-  ]
-}) 
+matchDnaPairs('G') // returns ['GC']
+matchDnaPairs('GAT') // returns ['GC', 'AT', 'TA']
+matchDnaPairs('GYTC') // returns ['GC', 'TA', 'CG']
+matchDnaPairs('gat') // returns ['GC', 'AT', 'TA']
