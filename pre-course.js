@@ -634,32 +634,204 @@
 
 
 
-function matchDnaPairs(dnaString) {
-  let dnaList = dnaString.split("")
-  // console.log(dnaList)
-  let processedList = []
-  let newCase = ""
-  for (let i = 0; i < dnaList.length; i++) {
-    if (dnaList[i].toUpperCase() == 'G') {
-      newCase = 'GC'
-      processedList.push(newCase)
-    } else if (dnaList[i].toUpperCase() == 'C') {
-      newCase = 'CG'
-      processedList.push(newCase)
-    }  else if (dnaList[i].toUpperCase() == 'T') {
-      newCase = 'TA'
-      processedList.push(newCase)
-    } else if (dnaList[i].toUpperCase() == 'A') {
-      newCase = 'AT'
-      processedList.push(newCase)
-    }
+// function matchDnaPairs(dnaString) {
+//   let dnaList = dnaString.split("")
+//   // console.log(dnaList)
+//   let processedList = []
+//   let newCase = ""
+//   for (let i = 0; i < dnaList.length; i++) {
+//     if (dnaList[i].toUpperCase() == 'G') {
+//       newCase = 'GC'
+//       processedList.push(newCase)
+//     } else if (dnaList[i].toUpperCase() == 'C') {
+//       newCase = 'CG'
+//       processedList.push(newCase)
+//     }  else if (dnaList[i].toUpperCase() == 'T') {
+//       newCase = 'TA'
+//       processedList.push(newCase)
+//     } else if (dnaList[i].toUpperCase() == 'A') {
+//       newCase = 'AT'
+//       processedList.push(newCase)
+//     }
+//   }
+//   return console.log(processedList)
+// }
+
+
+
+// matchDnaPairs('G') // returns ['GC']
+// matchDnaPairs('GAT') // returns ['GC', 'AT', 'TA']
+// matchDnaPairs('GYTC') // returns ['GC', 'TA', 'CG']
+// matchDnaPairs('gat') // returns ['GC', 'AT', 'TA']
+
+
+
+// function sumNums(str) {
+//   let counter = 0 
+//   const regex = /[1-9]+/g
+//   const matches = str.match(regex)
+//   if (matches != null) {
+//     for (let i = 0; i < matches.length; i++) {
+//       counter += Number(matches[i])
+//     }
+//   }
+  
+//   return console.log(counter)
+// // }
+
+
+// sumNums('') // returns 0
+// sumNums('abcdef') // returns 0
+// sumNums('1') // returns 1
+// sumNums('123') // returns 123
+// sumNums('1hello2') // returns 3
+// sumNums('12hiya!3') // returns 15
+
+
+
+// function testValidCountdown(str) {
+//   let answer = false
+//   const regex1 = /[aeiou]{3,}/
+//   const regex2 = /[^aeiou]{4,}/
+//   const regex3 = /^[a-z]{9}$/
+  
+//   const matches1 = regex1.test(str)
+//   const matches2 = regex2.test(str)
+//   const matches3 = regex3.test(str)
+//   if (matches1 && matches2 && matches3) {
+//     answer = true
+//   }
+//   return console.log(answer)
+// // }
+
+
+
+// testValidCountdown('aaabbbccc') // returns true
+// testValidCountdown('eeeedddff') // returns true
+// testValidCountdown('aeiouwxyz') // returns true
+
+// testValidCountdown("aeiouaxyz") // returns false (not enough consonants)
+// testValidCountdown("aabbbcccd") // returns false (not enough vowels)
+// testValidCountdown("aeiouvwxyz") // returns false (more than 9 characters)
+// testValidCountdown("aeicdfg") // returns false (fewer than 9 characters)
+
+
+
+// function extractRepoName(str) {
+//   let answer = ""
+//   const regex = /[^A-Z]/g
+//   // const regex = /^[^https://github.com/northcoders/]$/g
+//   const matches = str.match(regex)
+//   const joined = matches.join("")
+//   const myList = joined.split("/")
+//   let lastElement = myList[myList.length-1]
+//   let secondToLastElement = myList[myList.length-2]
+//   if (lastElement == 'settings') {
+//     answer = secondToLastElement
+//   } else {
+//     answer = lastElement
+//   } 
+//   return console.log(answer)
+
+// // }
+
+
+// extractRepoName("https://github.com/northcoders/intro-week") // returns "intro-week"
+
+// extractRepoName("https://github.com/northcoders/remote-git-workshop") // returns "remote-git-workshop"
+
+// extractRepoName("https://github.com/myAccount/notes") // returns "notes"
+
+// extractRepoName("https://github.com/myAccount/notes/settings") // returns "notes"
+
+
+// function testExact2ConsecutiveLs(str) {
+//   const regex = /[ll]/g
+//   const matches = str.match(regex);
+//   let answer = false
+//   if (matches.length != 2) {
+//     answer = false
+//   } else {
+//     answer = true
+//   }
+
+//   return console.log(answer);
+// }
+
+// testExact2ConsecutiveLs("ll") // returns true
+// testExact2ConsecutiveLs("bells") // returns true
+// testExact2ConsecutiveLs("aaaallasdows") // returns true
+
+// testExact2ConsecutiveLs("mile") // returns false
+// testExact2ConsecutiveLs("welll") // returns false
+// testExact2ConsecutiveLs("lolly") // returns false
+
+
+
+
+// function validatePin(str) {
+//   let answer = false
+//   const regex = /[0-9]{4,6}/
+//   const matches = str.match(regex)
+//   if (matches != null) {
+//     if (matches.length >= 4 || matches.length <= 6) {
+//       answer = true
+//     }
+//   }
+//   return console.log(answer)
+// }
+
+
+// validatePin("3542") // returns true
+// validatePin("19073") // returns true
+// validatePin("876487") // returns true
+
+// validatePin("abcdei") // returns false
+// validatePin("h23456") // returns false
+// validatePin("75839502") // returns false
+
+
+
+// function excludeWords(str) {
+//   // const regex = /^((?!.*north.*).)*$/g
+//   // const regex = / ./
+//   // const matches = str.match(regex)
+//   const strList = str.split(" ")
+//   // console.log(strList)
+//   let myList = []
+//   for (let i = 0; i < strList.length; i++) {
+//     if (strList[i] != "north" && strList[i] != "coders") {
+//       myList.push(strList[i])
+//     } 
+//   }
+//   let answer = myList.join(", ")
+//   return answer
+// }
+
+
+// excludeWords("I live in a house") // returns "I live in a house."
+// excludeWords("My brother lives in the north of England.") // returns "My brother lives in the of England."
+// excludeWords("IBM hired a lot of coders lately.") // returns "IBM hired a lot of lately."
+// excludeWords("I study at Northcoders.") // returns "I study at Northcoders."
+
+
+// Study this one! (and question prior to this on regex pre-coursel list)
+function matchUniqueDigits(str) {
+  const regex = /(.+)(?=.*\1)/gm
+  const matches = regex.test(str)
+  let answer = true
+
+  if (matches) {
+    answer = false
   }
-  return console.log(processedList)
+
+
+  return console.log(answer)
 }
 
 
+matchUniqueDigits("2") // returns true
+matchUniqueDigits("1234") // returns true
 
-matchDnaPairs('G') // returns ['GC']
-matchDnaPairs('GAT') // returns ['GC', 'AT', 'TA']
-matchDnaPairs('GYTC') // returns ['GC', 'TA', 'CG']
-matchDnaPairs('gat') // returns ['GC', 'AT', 'TA']
+matchUniqueDigits("00") // returns false
+matchUniqueDigits("123452") // returns false
